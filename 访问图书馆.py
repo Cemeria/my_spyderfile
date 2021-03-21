@@ -35,6 +35,9 @@ class Bookmanger:
                 elif choise == 4:
                     self.return_book()
                     
+                elif choise == 5:
+                    self.find_author()
+                    
                 else:
                     print('see you next time!')
                     break
@@ -85,10 +88,21 @@ class Bookmanger:
                 print('return book successful.')
         else:
             print('we do not have this book.')
+            
+    def find_author(self):
+        q=input('please input the author.')
+        a=[b.author for b in self.books]
+        if q in a: 
+            print('here is the book.')
+            for b in self.books:
+                if b.author == q:
+                    print(b)
+        else:
+             print('we dont find the author')
                 
 g=Bookmanger()
 g.mange()
 
 
-    
+
     
